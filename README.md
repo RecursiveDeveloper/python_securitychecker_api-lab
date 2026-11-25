@@ -154,6 +154,41 @@ Python and pip are not required on the host for the Docker workflow. For local d
    curl http://localhost:5000/passGen/16/1/1/1/
    ```
 
+### Local Deployment without Docker
+
+1. **From the repository root, create and activate a virtual environment:**
+   ```sh
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+   On Windows, activate the environment with `.venv\Scripts\activate` instead.
+
+2. **Install the application dependencies:**
+   ```sh
+   python -m pip install -r app/requirements.txt
+   ```
+
+3. **Start the Flask development server:**
+   ```sh
+   python app/server.py
+   ```
+
+   The API listens on `http://localhost:5000`. Leave this process running while using the API.
+
+4. **Verify the API from another terminal:**
+   ```sh
+   curl http://localhost:5000/
+   curl http://localhost:5000/passGen/16/1/1/1/
+   ```
+
+5. **Stop the server and deactivate the virtual environment:**
+
+   Press `Ctrl+C` in the terminal running Flask, then run:
+   ```sh
+   deactivate
+   ```
+
 ### Configuration
 
 `app/server.py` selects `DevelopmentConfig` by default. Setting the `PRODUCTION` environment variable to a non-empty value selects `ProductionConfig`:
