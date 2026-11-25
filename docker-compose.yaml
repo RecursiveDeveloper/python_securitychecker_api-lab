@@ -1,11 +1,10 @@
-version: '3.9'
-
 services:
   flaskapp:
     build:
-      context: ./../
-      dockerfile: Docker/Dockerfile
-    container_name: 'flaskapp'
+      context: .
+    image: flaskapp:v0.1
+    restart: unless-stopped
+    container_name: flaskapp
     ports:
       - '5000:5000/tcp'
     networks:

@@ -1,4 +1,38 @@
+# Python cache & compiled files
 __pycache__/
-.terraform*
-terraform.tfstate
-terraform.tfstate.backup
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# python-decouple / environment variables
+.env
+.env.*
+*.env
+.ini
+settings.ini
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Test & coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

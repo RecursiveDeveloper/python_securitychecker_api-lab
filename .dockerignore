@@ -1,5 +1,25 @@
-.git*
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Docker files (not needed inside the image)
+dockerfile
+docker-compose.yaml
+.dockerignore
+
+# Shell scripts (deploy/destroy tooling, not runtime)
+*.sh
+
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment & secrets
+.env
+.env.*
+*.env
+
+# Docs
 README.md
-Dockerfile
-Cloudformation_templates/
-Docker/

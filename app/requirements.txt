@@ -1,0 +1,8 @@
+Flask==2.3.3
+Flask-Cors==6.0.5
+Flask-RESTful==0.3.10
+Werkzeug==2.3.8
+gunicorn==27.0.1
+itsdangerous==2.2.0
+click==8.1.8
+python-decouple==3.8

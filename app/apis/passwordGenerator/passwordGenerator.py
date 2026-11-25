@@ -58,79 +58,11 @@ class passgen:
 				asciis = passgen.cleanLowerCaseLetters(self,asciis)
 			if passgen.get_specialCharacters(self) == False:
 				asciis = passgen.cleanSpecialCharacters(self,asciis)
-			#print('\n')
-			#print('Tamaño de la lista Ascii: ', len(asciis))
-			#print(asciis)
-			#print('\n')
 			while len(asciis) <= passgen.get_passlength(self):
 				asciis.extend(asciis)
 			for word in range(passgen.get_passlength(self)):
 				randomNumb = random.randint(0,len(asciis)-1)
-				#print(str(randomNumb))
-				#print(str(randomNumb) +' ----> ' + str(asciis[randomNumb]))
 				password.append(asciis[randomNumb])
-			#print(passgen.get_asciiList(self))
-			#print('\n')
-			#print(password)
 			return passgen.joinListValues(self,password)
 		else:
 			return 'You have overpassed the maximum length, the maximum length is 29 characters'
-
-"""def main():
-	try:
-		passSize = int(input('Longitud de la contraseña (número de caracteres): '))
-		if passSize > 30:
-			raise Exception
-		print('\n')
-		print('Si su respuesta es sí, digite -> 1, de lo contrario digite -> 0 .\nCualquier otro caracter será tomado como -> 0 o se notificará como error')
-		print('\n')
-
-		respuestas = list()
-		try:
-			capitalLetter = int(input('Incluir letras en mayúscula: '))
-			if capitalLetter == 1:
-				respuestas.append(True)
-			elif capitalLetter == 0 or capitalLetter != 0:
-				respuestas.append(False)
-		except ValueError as e:
-			respuestas.append(False)
-		
-		try:
-			lowCaseLetter = int(input('Incluir letras en minúscula: '))
-			if lowCaseLetter == 1:
-				respuestas.append(True)
-			elif lowCaseLetter == 0 or lowCaseLetter != 0:
-				respuestas.append(False)
-		except Exception as e:
-			respuestas.append(False)
-		
-		try:
-			puntuation = int(input('Incluir signos de puntuación: '))
-			if puntuation == 1:
-				respuestas.append(True)
-			elif puntuation == 0 or puntuation != 0:
-				respuestas.append(False)
-		except Exception as e:
-			respuestas.append(False)
-
-		try:
-			specialCharacters = int(input('Incluir caracteres especiales: '))
-			if specialCharacters == 1:
-				respuestas.append(True)
-			elif specialCharacters == 0 or specialCharacters != 0:
-				respuestas.append(False)
-		except Exception as e:
-			respuestas.append(False)
-		
-		print(respuestas)
-		password = passgen(passSize,respuestas[0],respuestas[1],respuestas[2],respuestas[3])
-		print('\n')
-		print(password.generatePass())
-	except Exception as e:
-		print('El programa ha finalizado debido a un error, certifique los datos ingresados.\nError info: '+str(e))
-
-if __name__ == '__main__':
-	try:
-		main()
-	except Exception as e:
-		print('El programa ha finalizado debido a un error, certifique los datos ingresados.\nError info: '+str(e))"""
